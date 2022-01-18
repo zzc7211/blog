@@ -13,18 +13,24 @@ cd docs/.vuepress/dist
 echo 'b.xugaoyi.com' > CNAME
 git config --global user.name "zhouzichun"
 git config --global user.email "914880597@qq.com"
-if [ -z "$GITHUB_TOKEN" ]; then
-  msg='deploy'
-  githubUrl=git@github.com:zzc7211/blog.git
-else
-# https://github.com/zzc7211/blog.git
-  msg='来自github actions的自动部署'
-  githubUrl=https://zzc7211:${GITHUB_TOKEN}@github.com/zzc7211/blog.git
-fi
+
 git init
 git add -A
-git commit -m "${msg}"
-git push -f $githubUrl master:gh-pages # 推送到github gh-pages分支
+git commit -m "init"
+git push -f https://zzc777:dcdd30ab3ea720c64d1ab9588fc08e7e@gitee.com/zzc777/zzc777.git master
+# git push -f https://zhouzichun:58920cf0649c21f08d699647cc2855f9@gitee.com/zhouzichun/zhouzichun.git master
+# if [ -z "$GITHUB_TOKEN" ]; then
+#   msg='deploy'
+#   githubUrl=git@github.com:zzc7211/blog.git
+# else
+# # https://github.com/zzc7211/blog.git
+#   msg='来自github actions的自动部署'
+#   githubUrl=https://zzc7211:${GITHUB_TOKEN}@github.com/zzc7211/blog.git
+# fi
+# git init
+# git add -A
+# git commit -m "${msg}"
+# git push -f $githubUrl master:gh-pages # 推送到github gh-pages分支
 
 # deploy to coding pages
 # echo 'www.xugaoyi.com\nxugaoyi.com' > CNAME  # 自定义域名

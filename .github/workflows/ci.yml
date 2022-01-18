@@ -57,6 +57,9 @@ jobs:
         env:
           # @see https://docs.github.com/cn/actions/reference/authentication-in-a-workflow#about-the-github_token-secret
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      # 运行构建脚本
+      - name: Deploy to gitee Pages
+        run: yarn deploy
 
       # - name: Build and Deploy # 步骤3 （只提交到github可以使用这个步骤）
       #   uses: JamesIves/github-pages-deploy-action@master # 作用：将项目构建和部署到github。 https://github.com/JamesIves/github-pages-deploy-action
